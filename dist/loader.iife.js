@@ -1,0 +1,1 @@
+!function(){"use strict";const t=async()=>{const t=(await fetch("https://api.github.com/repos/awescnb/acnb-themes-data/tags")).map((t=>t.name))[0];var a;return await(a=t,fetch(`https://cdn.jsdelivr.net/gh/awescnb/acnb-themes-data@${a}/themes.json`))};(async a=>{t().filter((t=>"string"==typeof t.name?t.name===a:t.name.includes[a]))[0].url})("reacg")}();

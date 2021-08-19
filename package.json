@@ -1,0 +1,24 @@
+{
+  "name": "loader",
+  "version": "1.0.0",
+  "description": "🚀 Loading theme js files for awescnb.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "node dist/loader.iife.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://hub.fastgit.org/awescnb/loader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.6"
+  },
+  "dependencies": {
+    "vite": "^2.5.0"
+  }
+}
