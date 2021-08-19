@@ -1,4 +1,4 @@
-export interface ITheme {
-  name: string | Array<string>
-  url: string
-}
+export type Theme = {
+  name: string | Array<string>;
+  url: string;
+};
