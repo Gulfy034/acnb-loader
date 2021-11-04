@@ -2,6 +2,8 @@
 
 🚀 Loading theme js files for awescnb.
 
+Loader receives a configuration object, mounts the object to window, and then loads the corresponding theme file according to the `configurationObject.theme.name` in the incoming object.
+
 ## Usage
 
 ```html
