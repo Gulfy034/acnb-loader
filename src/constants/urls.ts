@@ -1,1 +1,1 @@
-export const url = "https://cdn.jsdelivr.net/gh/awescnb/acnb-themes-data@latest/dist/themes.json";
+export const url = "https://acnblog.gitee.io/acnb-theme-data/themes.json";
