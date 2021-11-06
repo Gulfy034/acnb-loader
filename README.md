@@ -7,7 +7,7 @@ Loader receives a configuration object, mounts the object to window, and then lo
 ## Usage
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/awescnb/acnb-loader@latest/dist/loader.iife.js"></script>
+<script src="https://acnb.gitee.io/acnb-loader/loader.iife.js"></script>
 <script>
   const opts = {
     theme: {
