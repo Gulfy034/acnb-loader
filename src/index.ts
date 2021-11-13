@@ -1,11 +1,11 @@
-import { loadScript } from "./utils/helpers";
-import { IOptions } from "./types/index";
+import { loadJSON } from "./utils/helpers";
 import { url } from "./constants/urls";
-import { Theme } from "./types/theme";
+import type { IOptions, Theme, IData } from "./types/index";
 
 const ensureThemeUrl = async (themeName: string) => {
   const response = await fetch(url);
-  const column = await response.json();
+  const { data: themes } = await (response.json() as Promise<IData>);
+
   const isCurrentTheme = ({ name }: Theme) => {
     if (typeof name === "string") {
       return name === themeName;
@@ -13,14 +13,15 @@ const ensureThemeUrl = async (themeName: string) => {
       return name.includes(themeName);
     }
   };
-  const currentTheme = column.filter(isCurrentTheme);
+
+  const currentTheme = themes.filter(isCurrentTheme);
   return currentTheme[0].url;
 };
 
 const loader = (options: IOptions = { theme: { name: "acg" } }) => {
   window.opts = options;
   const themeName = options.theme.name;
-  ensureThemeUrl(themeName).then((url: string) => loadScript(url));
+  ensureThemeUrl(themeName).then((url: string) => loadJSON(url));
 };
 
 $.extend({ awesCnb: loader });

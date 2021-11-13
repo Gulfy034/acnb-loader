@@ -6,7 +6,7 @@ export default defineConfig({
       fileName: "loader",
       formats: ["iife"],
       name: "loader",
-      entry: "./src/main.ts",
+      entry: "./src/index.ts",
     },
   },
 });
