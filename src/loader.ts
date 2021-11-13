@@ -37,6 +37,5 @@ export const loader = async (options: IOptions) => {
   mountOptions(options);
   const themeName = ensureThemeName(options);
   const themeUrl = await ensureThemeUrl(themeName);
-  console.log(themeUrl);
   loadScript(themeUrl);
 };
