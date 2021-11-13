@@ -7,5 +7,6 @@ declare global {
         name: string;
       };
     };
+    acnb: Function;
   }
 }

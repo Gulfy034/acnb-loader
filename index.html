@@ -8,11 +8,15 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
-    <script type="module" src="./src/main.ts"></script>
+    <script type="module" src="./src/index.ts"></script>
     <script>
-      console.log($.awesCnb);
       setTimeout(() => {
-        $.awesCnb();
+        const opts = {
+          theme: {
+            name: "geek",
+          },
+        };
+        $.awesCnb(opts);
       }, 1000);
     </script>
   </body>
