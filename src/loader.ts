@@ -1,4 +1,4 @@
-import { loadJSON } from "./helpers";
+import { loadScript } from "./helpers";
 import { url, defaultThemeName } from "./constants";
 import type { IOptions, Theme, IData } from "./types";
 
@@ -38,5 +38,5 @@ export const loader = async (options: IOptions) => {
   const themeName = ensureThemeName(options);
   const themeUrl = await ensureThemeUrl(themeName);
   console.log(themeUrl);
-  loadJSON(themeUrl);
+  loadScript(themeUrl);
 };
