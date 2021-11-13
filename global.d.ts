@@ -2,11 +2,7 @@ export {};
 
 declare global {
   interface Window {
-    opts: {
-      theme: {
-        name: string;
-      };
-    };
+    opts: any;
     acnb: Function;
   }
 }

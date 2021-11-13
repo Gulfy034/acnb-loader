@@ -31,7 +31,7 @@ const ensureThemeName = (options: IOptions): string => {
   return defaultThemeName;
 };
 
-const mountOptions = (options: IOptions): void => (window.opts = options);
+const mountOptions = (options: IOptions) => (window.opts = options);
 
 export const loader = async (options: IOptions) => {
   mountOptions(options);
