@@ -21,3 +21,12 @@ export function loadScript(url: string, callback: Function = function () {}) {
     success: () => callback(),
   });
 }
+
+/**
+ * Determines whether the string is a url
+ * @param {string} str
+ * @returns {Boolean}
+ */
+export function isUrl(str: string): boolean {
+  return new RegExp("http").test(str);
+}

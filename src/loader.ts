@@ -1,4 +1,4 @@
-import { loadScript } from "./helpers";
+import { loadScript, isUrl } from "./helpers";
 import { url, defaultThemeName } from "./constants";
 import type { IOptions, Theme, IData } from "./types";
 
@@ -12,10 +12,11 @@ const isCurrentTheme = (themeName: string) => {
   };
 };
 
-const ensureThemeUrl = async (themeName: string) => {
+const ensureThemeUrl = async (userConfig: string) => {
+  if (isUrl(userConfig)) return userConfig;
   const response = await fetch(url);
   const { data: cloudThemes } = await (response.json() as Promise<IData>);
-  const currentThemeData = cloudThemes.filter(isCurrentTheme(themeName));
+  const currentThemeData = cloudThemes.filter(isCurrentTheme(userConfig));
 
   if (currentThemeData.length) {
     return currentThemeData[0].url;
@@ -24,7 +25,7 @@ const ensureThemeUrl = async (themeName: string) => {
   }
 };
 
-const ensureThemeName = (options: IOptions): string => {
+const getUserConfig = (options: IOptions) => {
   if (options && "theme" in options && "name" in options.theme && typeof options.theme.name === "string") {
     return options.theme.name;
   }
@@ -35,7 +36,7 @@ const mountOptions = (options: IOptions) => (window.opts = options);
 
 export const loader = async (options: IOptions) => {
   mountOptions(options);
-  const themeName = ensureThemeName(options);
-  const themeUrl = await ensureThemeUrl(themeName);
+  const userConfig = getUserConfig(options);
+  const themeUrl = await ensureThemeUrl(userConfig);
   loadScript(themeUrl);
 };
