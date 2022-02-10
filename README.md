@@ -2,7 +2,7 @@
 
 **English** | [中文](./README.zh-CN.md)
 
-🚀 Loading theme js files for awescnb.
+🚀 Loading theme js file for awescnb.
 
 Loader receives a configuration object, mounts the object to window, and then loads the corresponding theme file according to the `configurationObject.theme.name` in the incoming object.
 
