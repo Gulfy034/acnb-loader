@@ -26,8 +26,9 @@ const ensureThemeUrl = async (userConfig: string) => {
 };
 
 const getUserConfig = (options: IOptions) => {
-  if (options && "theme" in options && "name" in options.theme && typeof options.theme.name === "string") {
-    return options.theme.name;
+  if (options && "theme" in options) {
+    if ("name" in options.theme && typeof options.theme.name === "string") return options.theme.name;
+    if ("url" in options.theme && typeof options.theme.url === "string") return options.theme.url;
   }
   return defaultThemeName;
 };

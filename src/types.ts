@@ -18,4 +18,15 @@ export type IOptions =
       theme: {
         name: string;
       };
+    }
+  | {
+      theme: {
+        url: string;
+      };
+    }
+  | {
+      theme: {
+        name: string;
+        url: string;
+      };
     };
