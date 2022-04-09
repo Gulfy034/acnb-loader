@@ -1,12 +1,13 @@
-node_modules
-
-npm-debug.log
-yarn-error.log
-
-# ide
 .idea
-
-# Mac General
 .DS_Store
 .AppleDouble
 .LSOverride
+.cache
+*.log
+*.tgz
+coverage
+dist
+lib-cov
+logs
+node_modules
+temp
