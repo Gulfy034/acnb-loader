@@ -4,7 +4,7 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     lib: {
-      fileName: 'loader',
+      fileName: () => 'loader.min.js',
       formats: ['iife'],
       name: 'loader',
       entry: './src/index.ts',

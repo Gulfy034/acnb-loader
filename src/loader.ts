@@ -1,5 +1,5 @@
 import { isURL, loadScript } from './helpers'
-import { DEFAULT_THEME_NAME, LEGACY_THEME } from './constants'
+import { BASE_URL, DEFAULT_THEME_NAME, LEGACY_THEME } from './constants'
 import type { IOptions } from './types'
 
 function mountOptions(options: IOptions) {
@@ -21,7 +21,7 @@ function ensureThemeUrl(theme: string) {
     return theme
   }
   const _theme = LEGACY_THEME[theme as keyof typeof LEGACY_THEME] ?? theme
-  return `BASE_URL/${_theme}.js`
+  return `${BASE_URL}/${_theme}.js`
 }
 
 export async function loader(options: IOptions) {
