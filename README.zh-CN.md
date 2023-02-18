@@ -11,7 +11,7 @@ Loader 接收一个配置对象，将该对象挂载到窗口，然后根据传�
 通过皮肤名称加载皮肤。
 
 ```html
-<script src="https://acnb.gitee.io/acnb-loader/loader.iife.js"></script>
+<script src="https://blog-static.cnblogs.com/files/guangzan/loader.min.js"></script>
 <script>
   const opts = {
     theme: {
@@ -26,11 +26,11 @@ Loader 接收一个配置对象，将该对象挂载到窗口，然后根据传�
 通过皮肤 URL 加载皮肤。
 
 ```html
-<script src="https://acnb.gitee.io/acnb-loader/loader.iife.js"></script>
+<script src="https://blog-static.cnblogs.com/files/guangzan/loader.min.js"></script>
 <script>
   const opts = {
     theme: {
-      url: "https://guangzan.gitee.io/awescnb/reacg.js",
+      name: "https://guangzan.gitee.io/awescnb/reacg.js",
     },
     // 其他配置
   };

@@ -11,7 +11,7 @@ Loader receives a configuration object, mounts the object to window, and then lo
 Load skins via theme name.
 
 ```html
-<script src="https://acnb.gitee.io/acnb-loader/loader.iife.js"></script>
+<script src="https://blog-static.cnblogs.com/files/guangzan/loader.min.js"></script>
 <script>
   const opts = {
     theme: {
@@ -26,11 +26,11 @@ Load skins via theme name.
 Load skins via theme URL.
 
 ```html
-<script src="https://acnb.gitee.io/acnb-loader/loader.iife.js"></script>
+<script src="https://blog-static.cnblogs.com/files/guangzan/loader.min.js"></script>
 <script>
   const opts = {
     theme: {
-      url: "https://guangzan.gitee.io/awescnb/reacg.js",
+      name: "https://guangzan.gitee.io/awescnb/reacg.js",
     },
     // 其他配置
   };
