@@ -1,43 +1,30 @@
-import { loadScript, isUrl } from "./helpers";
-import { url, defaultThemeName } from "./constants";
-import type { IOptions, Theme, IData } from "./types";
+import { isURL, loadScript } from './helpers'
+import { DEFAULT_THEME_NAME, LEGACY_THEME } from './constants'
+import type { IOptions } from './types'
 
-const isCurrentTheme = (themeName: string) => {
-  return ({ name }: Theme) => {
-    if (typeof name === "string") {
-      return name === themeName;
-    } else {
-      return name.includes(themeName);
-    }
-  };
-};
+function mountOptions(options: IOptions) {
+  window.opts = options
+}
 
-const ensureThemeUrl = async (userConfig: string) => {
-  if (isUrl(userConfig)) return userConfig;
-  const response = await fetch(url);
-  const { data: cloudThemes } = await (response.json() as Promise<IData>);
-  const currentThemeData = cloudThemes.filter(isCurrentTheme(userConfig));
-
-  if (currentThemeData.length) {
-    return currentThemeData[0].url;
-  } else {
-    return cloudThemes.filter(isCurrentTheme(defaultThemeName))[0].url;
+function getUserConfig(options: IOptions) {
+  if (typeof options?.base?.theme === 'string') {
+    return options.base.theme
   }
-};
-
-const getUserConfig = (options: IOptions) => {
-  if (options && "theme" in options) {
-    if ("name" in options.theme && typeof options.theme.name === "string") return options.theme.name;
-    if ("url" in options.theme && typeof options.theme.url === "string") return options.theme.url;
+  if (typeof options?.theme?.name === 'string') {
+    return options.theme.name
   }
-  return defaultThemeName;
-};
+  return DEFAULT_THEME_NAME
+}
 
-const mountOptions = (options: IOptions) => (window.opts = options);
+function ensureThemeUrl(theme: string) {
+  if (isURL(theme)) {
+    return theme
+  }
+  const _theme = LEGACY_THEME[theme as keyof typeof LEGACY_THEME] ?? theme
+  return `BASE_URL/${_theme}.js`
+}
 
-export const loader = async (options: IOptions) => {
-  mountOptions(options);
-  const userConfig = getUserConfig(options);
-  const themeUrl = await ensureThemeUrl(userConfig);
-  loadScript(themeUrl);
-};
+export async function loader(options: IOptions) {
+  mountOptions(options)
+  loadScript(ensureThemeUrl(getUserConfig(options)))
+}

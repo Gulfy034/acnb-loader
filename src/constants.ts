@@ -1,3 +1,7 @@
-export const defaultThemeName = "acg";
-export const url = "https://acnblogs.gitee.io/acnb-theme-data/themes.json";
-// export const url = "https://cdn.jsdelivr.net/gh/awescnb/acnb-theme-data/dist/themes.json";
+export const DEFAULT_THEME_NAME = 'acg'
+export const BASE_URL = 'https://blog-static.cnblogs.com/files/guangzan'
+
+export const LEGACY_THEME = {
+  acg: 'react',
+  bilibiliv1: 'bilibili',
+}

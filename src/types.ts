@@ -1,32 +1,15 @@
-export type Theme = {
-  name: string | Array<string>;
-  url: string;
-};
-
-export interface IData {
-  version: number;
-  data: Array<Theme>;
+export interface Theme {
+  name?: string
 }
 
-export type IOptions =
-  | undefined
-  | {}
-  | {
-      theme: {};
-    }
-  | {
-      theme: {
-        name: string;
-      };
-    }
-  | {
-      theme: {
-        url: string;
-      };
-    }
-  | {
-      theme: {
-        name: string;
-        url: string;
-      };
-    };
+export interface IData {
+  version: number
+  data: Array<Theme>
+}
+
+export interface IOptions {
+  base: {
+    theme: string
+  }
+  theme: Theme
+}
