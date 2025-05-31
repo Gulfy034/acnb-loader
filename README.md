@@ -4,6 +4,8 @@
 
 🚀 Loading theme js file for awescnb.
 
+removed jQuery for the package, added support with ES6+TS
+
 Loader receives a configuration object, mounts the object to window, and then loads the corresponding theme file according to the `configurationObject.theme.name` in the incoming object.
 
 ## Usage
@@ -17,9 +19,9 @@ Load skins via theme name.
     theme: {
       name: "geek",
     },
-    // 其他配置
+    // other configurations
   };
-  $.awesCnb(opts);
+  $.awesCnb(opts); // use jquery directly in cnblog custom JS
 </script>
 ```
 
@@ -32,8 +34,8 @@ Load skins via theme URL.
     theme: {
       name: "https://guangzan.gitee.io/awescnb/reacg.js",
     },
-    // 其他配置
+    // other configurations
   };
-  $.awesCnb(opts);
+  $.awesCnb(opts); // use jquery directly in cnblog custom JS
 </script>
 ```
