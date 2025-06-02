@@ -10,7 +10,7 @@ Loader 接收一个配置对象，将该对象挂载到窗口，然后根据传�
 
 ## 使用
 
-通过皮肤名称加载皮肤。
+通过皮肤名称加载皮肤。（也可以自行编译上传你自己的loader.min.js）
 
 ```html
 <script src="https://blog-static.cnblogs.com/files/guangzan/loader.min.js"></script>
@@ -25,7 +25,7 @@ Loader 接收一个配置对象，将该对象挂载到窗口，然后根据传�
 </script>
 ```
 
-通过皮肤 URL 加载皮肤。
+通过皮肤 URL 加载皮肤。（也可以自行编译上传你自己的loader.min.js）
 
 ```html
 <script src="https://blog-static.cnblogs.com/files/guangzan/loader.min.js"></script>
@@ -36,6 +36,6 @@ Loader 接收一个配置对象，将该对象挂载到窗口，然后根据传�
     },
     // 其他配置
   };
-  $.awesCnb(opts);
+  $.awesCnb(opts);// 在博客园内的javascript中加载jquery
 </script>
 ```
