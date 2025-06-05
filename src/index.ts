@@ -1,4 +1,4 @@
 import { loader } from './loader'
 
-$.extend({ awesCnb: loader })
+Object.assign({ awesCnb: loader })
 window.theme = loader

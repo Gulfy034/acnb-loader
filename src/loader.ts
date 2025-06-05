@@ -20,8 +20,8 @@ function ensureThemeUrl(theme: string) {
   if (isURL(theme)) {
     return theme
   }
-  const _theme = LEGACY_THEME[theme as keyof typeof LEGACY_THEME] ?? theme
-  return `${BASE_URL}/${_theme}.js`
+  const legacytheme = LEGACY_THEME[theme as keyof typeof LEGACY_THEME] ?? theme
+  return `${BASE_URL}/${legacytheme}.js` // TODO: need replace
 }
 
 export async function loader(options: IOptions) {

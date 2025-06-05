@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   test: {
-    //todo
+    name: "loaderTest",
+    include: ["./tests/loader.{test,spec}.?(c|m)[jt]s?(x)"]
   }
 })
