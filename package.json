@@ -4,7 +4,7 @@
   "description": "Loading theme js file",
   "main": "index.js",
   "scripts": {
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "test": "vitest"
   },
   "repository": {
